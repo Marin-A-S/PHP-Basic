@@ -1,0 +1,37 @@
+* {
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Verdana', sans-serif;
+}
+
+.menu {
+    font-family: 'Verdana', sans-serif;
+    font-size: 16px;
+}
+
+.topContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.header {
+    font-family: 'Verdana', sans-serif;
+    font-size: 28px;
+    color: #2e0a54;
+}
+
+.auth {
+    display: flex;
+    justify-content: center;
+    font-family: 'Verdana', sans-serif;
+    font-size: 20px;
+    color: #520909;
+}
+
+.tasks {
+    text-align: center;
+    font-size: 20px;
+}
