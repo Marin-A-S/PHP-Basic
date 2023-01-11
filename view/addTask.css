@@ -1,0 +1,49 @@
+* {
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Verdana', sans-serif;
+}
+
+.menu {
+    font-family: 'Verdana', sans-serif;
+    font-size: 16px;
+}
+
+.taskBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 20px;
+    color: #2e0a54;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Verdana', sans-serif;
+    font-size: 20px;
+    color: #520909;
+}
+
+.inputBox {
+    width: 450px;
+    height: 25px;
+    margin: 15px 0;
+}
+
+.priorityBox {
+    width: 90px;
+    height: 25px;
+    margin-bottom: 15px;
+}
+
+.taskButton {
+    width: 90px;
+    height: 25px;
+}
