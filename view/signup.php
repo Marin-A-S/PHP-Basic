@@ -10,11 +10,10 @@
     <div class="topContainer">
         <div class="menu">
             <a href="/">Main</a>
-            <a href="/?controller=signUp">Sign Up</a>
         </div>
         <div class="header">Task controller</div>
     </div>
-    <div class="signInText">Sign in</div>
+    <div class="signInText">Sign up</div>
     <div>
         <?php if ($error !== null) : ?>
             <p class="error"><?= $error ?></p>

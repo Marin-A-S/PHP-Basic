@@ -1,23 +1,27 @@
 <?php
 require_once 'model/User.php';
 require_once 'model/Task.php';
+require_once 'model/TaskProvider.php';
+$pdo = require 'database.php';
 
 session_start();
-
 $userName = null;
-
+$status = null;
 if (isset($_SESSION['username'])) {
     $userName = $_SESSION['username']->getUsername();
-};
+} else {
+    header('Location: /?controller=index');
+    die();
+}
 
-$tasks = null;
+if (isset($_SESSION['status'])) {
+    $status = $_SESSION['status'];
+} else {
+    $status = 0;
+    $_SESSION['status'] = $status;
+}
 
-if (isset($_SESSION['tasks'])) {
-    foreach ($_SESSION['tasks'] as $key => $task) {
-        if (!$task->taskStatus()) {
-            $tasks[] = $task;
-        }
-    }
-};
+$taskProvider = new TaskProvider($pdo);
+$tasks = $taskProvider->getUndoneList($userName, $status);
 
 include 'view/tasks.php';

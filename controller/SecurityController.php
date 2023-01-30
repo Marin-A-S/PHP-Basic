@@ -4,21 +4,22 @@ require_once 'model/User.php';
 require_once 'model/UserProvider.php';
 
 session_start();
+$pdo = require 'database.php';
 
 $error = null;
 
-if (isset($_POST['username'], $_POST['password'])){
-    $username = $_POST['username'];
+if (isset($_POST['username'], $_POST['password'])) {
+    $userName = $_POST['username'];
     $password = $_POST['password'];
-    $userProvider = new UserProvider();
-    $user = $userProvider->getByUsernameAndPassword($username, $password);
+    $userProvider = new UserProvider($pdo);
+    $user = $userProvider->getByUsernameAndPassword($userName, $password);
     if ($user === null) {
-        $error = 'Пользователь с указанными учетными данными не найден';
+        $error = 'User not found';
     } else {
-       $_SESSION['username'] = $user; 
-       header('Location: /');
-       die();
-    };
-};
+        $_SESSION['username'] = $user;
+        header('Location: /');
+        die();
+    }
+}
 
 include 'view/signin.php';
